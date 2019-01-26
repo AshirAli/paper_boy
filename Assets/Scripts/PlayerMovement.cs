@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //public GameObject world;
     //public Transform prefabParentTransform;
-
+    public PlayerControl PC;
     public GameObject world1;
     public GameObject world2;
 
@@ -44,6 +44,9 @@ public class PlayerMovement : MonoBehaviour
 
             //GameObject instance = (GameObject)Instantiate(world, prefabParentTransform) as GameObject;
             //instance.transform.position = new Vector3(xcord+347, 0, 0);
+
         }
+
+        //if(other.gameObject.tag == "MailBox")
     }
 }
