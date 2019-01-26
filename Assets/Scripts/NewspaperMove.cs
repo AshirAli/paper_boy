@@ -23,5 +23,10 @@ public class NewspaperMove : MonoBehaviour
             PlayerControl.points += 10;
             gameObject.SetActive(false);
         }
+        if(other.gameObject.tag == "House")
+        {
+            PlayerControl.WarnMeter -= 10;
+            gameObject.SetActive(false);
+        }
     }
 }

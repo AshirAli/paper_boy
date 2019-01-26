@@ -863,6 +863,7 @@ MonoBehaviour:
   Main_Camera: {fileID: 1298740076}
   throwDistance: 5
   throwForce: 25
+  pointText: {fileID: 214812281}
 --- !u!1001 &802082021
 PrefabInstance:
   m_ObjectHideFlags: 0
