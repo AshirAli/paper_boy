@@ -26,4 +26,9 @@ public class UIControl : MonoBehaviour
         Application.Quit();
         Debug.Log("Quit!");
     }
+
+    public void ReloadScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
 }
