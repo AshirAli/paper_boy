@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4000011975553262}
   - component: {fileID: 33000012224542632}
   - component: {fileID: 23000011636912858}
+  - component: {fileID: 3327814592105049954}
   m_Layer: 0
   m_Name: Little Tropical House
   m_TagString: Untagged
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3327814592105049954
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011016130100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.1901155, y: 3.062744, z: 2.1611392}
+  m_Center: {x: 0.0041151047, y: 1.5288905, z: 0.03149593}
