@@ -1,0 +1,8 @@
+Hello and thank you for purchasing Little Tropical House.
+
+There is one fbx file made to prefab.
+Texure is 512*512 png
+
+2154  tris
+1427  Verts
+
