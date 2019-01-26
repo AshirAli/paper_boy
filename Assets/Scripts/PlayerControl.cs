@@ -12,6 +12,11 @@ public class PlayerControl : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
