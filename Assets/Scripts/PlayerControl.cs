@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerControl : MonoBehaviour
 {
-    public int speed = 5;
+    public static int speed = 5;
     public GameObject world;
     public static int points=0;
     public Transform newspaperParent;
@@ -13,13 +14,14 @@ public class PlayerControl : MonoBehaviour
     public Camera Main_Camera;
     public float throwDistance=2f;
     public float throwForce=5f;
+    public TextMeshProUGUI pointText;
 
     private Vector3 Mposition;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        pointText.text = points.ToString();
     }
 
     private void Update()
@@ -36,12 +38,13 @@ public class PlayerControl : MonoBehaviour
             Mposition = Main_Camera.ScreenToWorldPoint(Input.mousePosition);
             ThrowNewspaper();
         }
+        pointText.text = points.ToString();
     }
 
     public void PointAdd()
     {
         points += 10;
-        Debug.Log(points);
+        pointText.text = points.ToString();
     }
 
     void ThrowNewspaper()
@@ -50,8 +53,8 @@ public class PlayerControl : MonoBehaviour
         instance.transform.position = Main_Camera.transform.position + Main_Camera.transform.forward * throwDistance;
         instance.GetComponent<Rigidbody>().useGravity = true;
         //instance.GetComponent<Rigidbody>().AddForce(new Vector3(Mposition.x * throwForce,Mposition.y * throwForce,Main_Camera.transform.forward.x*throwForce));
-        instance.GetComponent<Rigidbody>().AddForce(Main_Camera.transform.forward * throwForce);
+        instance.GetComponent<Rigidbody>().AddForce(Main_Camera.transform.forward.x * throwForce, Main_Camera.transform.forward.y * throwForce + 5, Main_Camera.transform.forward.z * throwForce);
+        instance.GetComponent<Rigidbody>().velocity = Main_Camera.transform.forward * 10;
         //instance.transform.rotation += (5f, 5f, 5f);
-        Debug.Log("Throw!");
     }
 }
