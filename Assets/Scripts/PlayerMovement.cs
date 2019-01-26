@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("New world create");
             GameObject instance = (GameObject)Instantiate(world, prefabParentTransform) as GameObject;
-            instance.transform.position = new Vector3(133, 0, 0);
+            instance.transform.position = new Vector3(100, 0, 0);
         }
     }
 }
