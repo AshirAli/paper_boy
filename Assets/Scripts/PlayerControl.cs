@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerControl : MonoBehaviour
 {
+        
+
     public static int speed = 5;
     public static int WarnMeter = 100;
     public GameObject world;
@@ -51,6 +55,7 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        //if(Input.GetJoystickNames("OpenVR Controller - Right")
         if (Input.GetMouseButtonDown(0))
         {
             
@@ -76,6 +81,10 @@ public class PlayerControl : MonoBehaviour
             WarningEnd.SetActive(true);
             Invoke("GameOver", 2);
             warn1 = false;
+        }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Escape();
         }
         //newspaper.transform.position = Main_Camera.transform.position + Main_Camera.transform.forward * throwDistance;
     }
@@ -129,6 +138,11 @@ public class PlayerControl : MonoBehaviour
         WarningEnd.SetActive(false);
         GameOverUI.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void Escape()
+    {
+        SceneManager.LoadScene(0);
     }
 
     void HideCongo()
