@@ -10,6 +10,7 @@ public class PlayerControl : MonoBehaviour
 {
 
     public GameObject AudioManager;
+    [SerializeField]
     public static int speed = 5;
     public static int WarnMeter = 100;
     public GameObject world;

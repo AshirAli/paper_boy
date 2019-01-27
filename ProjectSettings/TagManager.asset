@@ -7,6 +7,10 @@ TagManager:
   - MailBox
   - House
   - End_Trigger
+  - projectile
+  - FxTemporaire
+  - Basket
+  - Road
   layers:
   - Default
   - TransparentFX
