@@ -5,19 +5,21 @@ using UnityEngine;
 public class NewspaperMove : MonoBehaviour
 {
     public GameObject AudioManager;
-    public GameObject newspapers;
-    public Transform basket;
-
+    public void Detached()
+    {
+        Invoke("Disappear", 2);
+    }
     private void OnTriggerEnter(Collider other)
     {
-        GameObject instance = Instantiate(newspapers, basket);
-        instance.transform.position = basket.transform.position;
         if (other.gameObject.tag == "MailBox")
         {
             PlayerControl.points += 10;
             gameObject.SetActive(false);
             AudioManager.GetComponent<AudioManager>().Play("drop");
         }
+        
+            
+       
         if(other.gameObject.tag == "House")
         {
             AudioManager.GetComponent<AudioManager>().Play("glass");
@@ -33,7 +35,7 @@ public class NewspaperMove : MonoBehaviour
        
     }
 
-    void Disapper()
+    void Disappear()
     {
         gameObject.SetActive(false);
     }

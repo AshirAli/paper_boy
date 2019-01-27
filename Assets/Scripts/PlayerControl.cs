@@ -53,6 +53,14 @@ public class PlayerControl : MonoBehaviour
         GameOverUI.SetActive(false);
         Time.timeScale = 1f;
         pointText.text = points.ToString();
+
+        InvokeRepeating("FillBasket", 2.0f, 5f);
+    }
+
+    void FillBasket()
+    {
+        GameObject instance = Instantiate(newspaper, newspaperParent);
+        //instance.transform.position = newspaperParent.transform.position;
     }
 
     private void Update()
