@@ -7,7 +7,7 @@ public class NewspaperMove : MonoBehaviour
     protected Rigidbody rigidBody;
     protected bool originalKinematicState;
     protected Transform originalParent;
-
+    public GameObject AudioManager;
     void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -69,9 +69,11 @@ public class NewspaperMove : MonoBehaviour
         {
             PlayerControl.points += 10;
             gameObject.SetActive(false);
+            AudioManager.GetComponent<AudioManager>().Play("drop");
         }
         if(other.gameObject.tag == "House")
         {
+            AudioManager.GetComponent<AudioManager>().Play("glass");
             PlayerControl.WarnMeter -= 10;
             gameObject.SetActive(false);
         }

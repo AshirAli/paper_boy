@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
-        
 
+    public GameObject AudioManager;
     public static int speed = 5;
     public static int WarnMeter = 100;
     public GameObject world;
@@ -35,6 +35,7 @@ public class PlayerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.GetComponent<AudioManager>().Play("bgm");
         speed = 5;
         WarnMeter = 100;
         timeLvlIncrease = 45f;
@@ -77,6 +78,7 @@ public class PlayerControl : MonoBehaviour
         }
         if(WarnMeter <= 0 & warn1)
         {
+            AudioManager.GetComponent<AudioManager>().Play("gameover");
             GameUI.SetActive(false);
             WarningEnd.SetActive(true);
             Invoke("GameOver", 2);
@@ -138,6 +140,7 @@ public class PlayerControl : MonoBehaviour
         WarningEnd.SetActive(false);
         GameOverUI.SetActive(true);
         Time.timeScale = 0f;
+        
     }
 
     public void Escape()
